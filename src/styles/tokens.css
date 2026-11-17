@@ -1,0 +1,45 @@
+:root {
+  --ink: #0b0d10;
+  --paper: #eceae4;
+  --mist: #8f9189;
+  --lime: #9fcf3a;
+  --line: rgba(236, 234, 228, 0.12);
+  --blue: #7ea0e8;
+  --violet: #b5a6ef;
+  --surface: rgba(255, 255, 255, 0.03);
+  --surface-strong: #12151b;
+  --on-accent: #0a0c08;
+  --glow: rgba(159, 207, 58, 0.12);
+  --glow-soft: rgba(126, 160, 232, 0.08);
+  --grain-opacity: 0.05;
+  --grid-line: rgba(159, 207, 58, 0.045);
+  --field-line: rgba(236, 234, 228, 0.22);
+  --field-placeholder: rgba(236, 234, 228, 0.4);
+  --prose: rgba(236, 234, 228, 0.78);
+  --nav-bg: rgba(11, 13, 16, 0.78);
+  --shadow: 0 12px 40px rgba(0, 0, 0, 0.28);
+  color-scheme: dark;
+}
+
+:root.light {
+  --ink: #f4f2ec;
+  --paper: #14161c;
+  --mist: #66706a;
+  --lime: #3f8f28;
+  --line: rgba(20, 22, 28, 0.1);
+  --blue: #3d63c7;
+  --violet: #6d5bb8;
+  --surface: rgba(20, 22, 28, 0.03);
+  --surface-strong: #ffffff;
+  --on-accent: #f7fff0;
+  --glow: rgba(63, 143, 40, 0.08);
+  --glow-soft: rgba(61, 99, 199, 0.06);
+  --grain-opacity: 0.035;
+  --grid-line: rgba(20, 22, 28, 0.05);
+  --field-line: rgba(20, 22, 28, 0.18);
+  --field-placeholder: rgba(20, 22, 28, 0.38);
+  --prose: rgba(20, 22, 28, 0.78);
+  --nav-bg: rgba(244, 242, 236, 0.82);
+  --shadow: 0 12px 36px rgba(20, 22, 28, 0.08);
+  color-scheme: light;
+}
