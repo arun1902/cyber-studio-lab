@@ -25,17 +25,22 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Cyber Studio Lab — A Safer Digital Mindset",
-    template: "%s — Cyber Studio Lab",
+    default: `${site.name} — ${site.tagline}`,
+    template: `%s — ${site.name}`,
   },
   description: site.description,
   applicationName: site.name,
   keywords: [
+    "software development",
     "cybersecurity",
-    "security awareness",
-    "privacy",
+    "application security",
+    "devops",
+    "devsecops",
+    "cloud security",
+    "docker",
+    "kubernetes",
     "tutorials",
-    "Cyber Studio Lab",
+    site.name,
   ],
   alternates: { canonical: "/" },
   openGraph: {
@@ -43,20 +48,20 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: site.url,
     siteName: site.name,
-    title: "Cyber Studio Lab — A Safer Digital Mindset",
+    title: `${site.name} — ${site.tagline}`,
     description: site.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cyber Studio Lab",
+    title: site.name,
     description: site.description,
   },
 };
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f4f2ec" },
-    { media: "(prefers-color-scheme: dark)", color: "#0b0d10" },
+    { media: "(prefers-color-scheme: light)", color: "#f5f7fa" },
+    { media: "(prefers-color-scheme: dark)", color: "#070b10" },
   ],
   colorScheme: "dark light",
 };

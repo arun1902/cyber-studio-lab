@@ -1,17 +1,22 @@
 export const site = {
-  name: "Cyber Studio Lab",
+  name: "CyberStudioLab",
   domain: "cyberstudiolab.com",
   url: "https://cyberstudiolab.com",
   description:
-    "Cyber Studio Lab publishes cybersecurity tips, tutorials, and security awareness for people who want a safer digital mindset.",
-  tagline: "Built for the curious. Designed for the digital world.",
+    "CyberStudioLab is a developer and cybersecurity knowledge platform: blogs, tutorials, animated videos, and tips for building better, more secure software and infrastructure.",
+  tagline: "Learn. Build. Secure.",
+  promise: "Learn technologies. Write better code. Understand security. Build reliable systems.",
+  servicesPartner: "DevCoreBit",
   year: 2026,
 } as const;
 
 export const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/explore", label: "Explore" },
+  { href: "/blog", label: "Blogs" },
   { href: "/tutorials", label: "Tutorials" },
-  { href: "/blog", label: "Blog" },
+  { href: "/videos", label: "Animated Videos" },
+  { href: "/tips", label: "Tips & Tricks" },
+  { href: "/labs", label: "Labs" },
+  { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
 ] as const;

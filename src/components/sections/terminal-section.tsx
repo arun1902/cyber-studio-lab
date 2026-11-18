@@ -15,7 +15,7 @@ function respond(raw: string): string[] {
   return [
     "Unknown command.",
     "This is a simulated terminal. It does not run on your machine.",
-    "Try: cyberlab --help",
+    "Try: csl --help",
   ];
 }
 
@@ -88,28 +88,28 @@ export function TerminalSection() {
     <section className="border-t border-line px-5 py-24 md:px-8 md:py-32">
       <div className="mx-auto grid max-w-[1440px] items-end gap-10 lg:grid-cols-[0.75fr_1.25fr]">
         <Reveal>
-          <SectionLabel index="05">Simulation</SectionLabel>
-          <h2 className="font-display text-[clamp(3rem,6vw,5.6rem)] uppercase leading-[0.88] tracking-[-0.05em]">
-            Ready to explore?
+          <SectionLabel index="06">Simulation</SectionLabel>
+          <h2 className="font-display text-[clamp(3rem,6vw,5.6rem)] leading-[0.95] tracking-[-0.05em]">
+            Explore from the terminal.
           </h2>
           <p className="mt-5 max-w-sm text-mist">
-            A teaching terminal with a fixed script. It answers a few commands and never touches a real system.
+            A scripted terminal that answers a few commands about the platform. It never touches a real system.
           </p>
         </Reveal>
         <div className="border border-line bg-surface-strong">
           <div className="flex items-center justify-between border-b border-line px-4 py-3 font-mono text-[0.68rem] uppercase tracking-[0.16em] text-mist">
             <span>csl://session</span>
-            <span className="text-lime">simulated</span>
+            <span className="text-cyan">simulated</span>
           </div>
           <div ref={scroller} className="h-[340px] overflow-auto px-4 py-4 font-mono text-sm leading-6" aria-live="polite">
             {lines.map((line, index) => (
-              <p key={`${line.kind}-${index}`} className={line.kind === "in" ? "text-lime" : "text-paper/85"}>
+              <p key={`${line.kind}-${index}`} className={line.kind === "in" ? "text-cyan" : "text-paper/85"}>
                 {line.kind === "in" ? `$ ${line.text}` : line.text || " "}
               </p>
             ))}
           </div>
           <form onSubmit={onSubmit} className="flex items-center gap-2 border-t border-line px-4">
-            <label htmlFor="lab-terminal" className="font-mono text-lime">
+            <label htmlFor="lab-terminal" className="font-mono text-cyan">
               $
             </label>
             <input
@@ -129,7 +129,7 @@ export function TerminalSection() {
                 key={suggestion}
                 type="button"
                 onClick={() => run(suggestion)}
-                className="border border-line px-2 py-1 font-mono text-[0.68rem] text-mist hover:border-lime hover:text-lime"
+                className="border border-line px-2 py-1 font-mono text-[0.68rem] text-mist hover:border-cyan hover:text-cyan"
               >
                 {suggestion}
               </button>

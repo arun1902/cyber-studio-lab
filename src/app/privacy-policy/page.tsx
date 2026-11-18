@@ -3,7 +3,7 @@ import { pageMeta } from "@/lib/metadata";
 
 export const metadata = pageMeta(
   "Privacy Policy",
-  "How Cyber Studio Lab treats information on this informational website.",
+  "How CyberStudioLab treats information on this informational website.",
   "/privacy-policy",
 );
 
@@ -16,7 +16,7 @@ export default function PrivacyPage() {
       <div className="prose-lab mx-auto max-w-3xl px-5 py-16 md:px-8">
         <h2 id="what-we-collect">What this version collects</h2>
         <p className="mt-5">
-          Pages are static. The newsletter field and the contact form check what you type in the browser and then discard it. They do not transmit the address or the message to a server controlled by Cyber Studio Lab.
+          Pages are static. The newsletter field and the contact form check what you type in the browser and then discard it. They do not transmit the address or the message to a server controlled by CyberStudioLab.
         </p>
         <h2 id="hosting">Hosting and logs</h2>
         <p className="mt-5">

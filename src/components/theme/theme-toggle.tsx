@@ -11,7 +11,7 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={toggleTheme}
-      className="grid h-10 w-10 place-items-center text-paper/75 transition-colors hover:text-lime"
+      className="grid h-10 w-10 place-items-center text-paper/75 transition-colors hover:text-cyan"
       aria-label={isLight ? "Switch to dark mode" : "Switch to light mode"}
       title={isLight ? "Dark mode" : "Light mode"}
       suppressHydrationWarning

@@ -1,21 +1,21 @@
-import { BlogExplorer } from "@/components/blog/blog-explorer";
+import { ContentExplorer } from "@/components/blog/content-explorer";
 import { PageHero } from "@/components/layout/page-hero";
-import { articles } from "@/data/articles";
+import { getBlogs } from "@/data/articles";
 import { pageMeta } from "@/lib/metadata";
 
 export const metadata = pageMeta(
-  "Blog",
-  "Cybersecurity essays and field notes from Cyber Studio Lab on passwords, privacy, phishing, and everyday defense.",
+  "Blogs",
+  "Engineering best practices, security explanations, and production-ready recommendations for developers and IT professionals.",
   "/blog",
 );
 
 export default function BlogPage() {
   return (
     <>
-      <PageHero index="03" kicker="Archive" title="Essays from the lab">
-        Awareness writing with a point of view. Filter by field, search the archive, and read at the length of a coffee.
+      <PageHero index="01" kicker="Blogs" title="Engineering knowledge, beyond the basics.">
+        Not just what a technology is, but how to configure and use it correctly in real projects: recommended settings, the reasoning behind them, and the mistakes to avoid.
       </PageHero>
-      <BlogExplorer articles={articles} />
+      <ContentExplorer articles={getBlogs()} placeholder="Rate limiting, PostgreSQL, Kubernetes, prompt injection" />
     </>
   );
 }

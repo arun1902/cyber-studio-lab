@@ -9,12 +9,12 @@ export function SocialSection() {
     <section className="border-t border-line px-5 py-20 md:px-8 md:py-28">
       <div className="mx-auto max-w-[1440px]">
         <Reveal>
-          <SectionLabel index="06">Channels</SectionLabel>
-          <h2 className="max-w-3xl font-display text-[clamp(2.4rem,5vw,4.5rem)] uppercase leading-[0.9] tracking-[-0.045em]">
-            The lab doesn&apos;t stop here.
+          <SectionLabel index="07">Community</SectionLabel>
+          <h2 className="max-w-3xl font-display text-[clamp(2.4rem,5vw,4.5rem)] leading-[0.95] tracking-[-0.045em]">
+            Learn with the community.
           </h2>
           <p className="mt-5 max-w-lg text-base leading-7 text-mist md:text-lg">
-            Follow our digital journey for cybersecurity tips, practical tutorials, tools, and security awareness.
+            Short explainers, animated breakdowns, and daily tips across every channel. Follow along and ask questions.
           </p>
         </Reveal>
 
@@ -26,13 +26,13 @@ export function SocialSection() {
                   href={link.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="group flex h-full flex-col justify-between gap-8 border border-line bg-surface p-5 transition-colors duration-300 hover:border-lime/50 hover:bg-surface-strong"
+                  className="group flex h-full flex-col justify-between gap-8 border border-line bg-surface p-5 transition-colors duration-300 hover:border-cyan/50 hover:bg-surface-strong"
                 >
                   <div className="flex items-start justify-between gap-3">
-                    <span className="grid h-10 w-10 place-items-center border border-line text-lime transition-colors group-hover:border-lime/40">
+                    <span className="grid h-10 w-10 place-items-center border border-line text-cyan transition-colors group-hover:border-cyan/40">
                       <SocialIcon platform={link.platform} className="h-4 w-4" />
                     </span>
-                    <ArrowUpRight className="h-4 w-4 text-mist transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-lime" />
+                    <ArrowUpRight className="h-4 w-4 text-mist transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-cyan" />
                   </div>
                   <div>
                     <p className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-mist">0{index + 1}</p>

@@ -27,7 +27,7 @@ export function CoverArt({
         ))}
       </g>
       {variant === "radar" && (
-        <g fill="none" stroke="var(--lime)" strokeWidth="1.5">
+        <g fill="none" stroke="var(--cyan)" strokeWidth="1.5">
           <circle cx="430" cy="260" r="70" />
           <circle cx="430" cy="260" r="130" opacity="0.7" />
           <circle cx="430" cy="260" r="190" opacity="0.4" />
@@ -35,16 +35,16 @@ export function CoverArt({
         </g>
       )}
       {variant === "lattice" && (
-        <g fill="none" stroke="var(--violet)" strokeWidth="1.4">
+        <g fill="none" stroke="var(--yellow)" strokeWidth="1.4">
           <path className="dash" d="M80 400 L220 140 L420 320 L640 80 L740 240" />
-          <path d="M220 140 L300 420 L560 360" stroke="var(--lime)" opacity="0.8" />
+          <path d="M220 140 L300 420 L560 360" stroke="var(--cyan)" opacity="0.8" />
           {[
             [220, 140],
             [420, 320],
             [640, 80],
             [300, 420],
           ].map(([x, y]) => (
-            <circle key={`${x}-${y}`} cx={x} cy={y} r="5" fill="var(--violet)" stroke="none" />
+            <circle key={`${x}-${y}`} cx={x} cy={y} r="5" fill="var(--yellow)" stroke="none" />
           ))}
         </g>
       )}
@@ -55,7 +55,7 @@ export function CoverArt({
         </g>
       )}
       {variant === "key" && (
-        <g fill="none" stroke="var(--lime)" strokeWidth="2">
+        <g fill="none" stroke="var(--cyan)" strokeWidth="2">
           <circle cx="250" cy="250" r="78" />
           <path d="M328 250 H690" />
           <path d="M560 250 V330 M630 250 V310 M690 250 V350" />
@@ -63,7 +63,7 @@ export function CoverArt({
         </g>
       )}
       {variant === "mesh" && (
-        <g stroke="var(--blue)" strokeWidth="1.2" fill="var(--lime)">
+        <g stroke="var(--blue)" strokeWidth="1.2" fill="var(--cyan)">
           <path className="dash" d="M120 140 L280 360 L520 120 L700 390" fill="none" />
           <path d="M120 140 L520 120 M280 360 L700 390 M280 360 L520 120" fill="none" opacity="0.7" />
           <circle cx="120" cy="140" r="6" />
@@ -73,16 +73,16 @@ export function CoverArt({
         </g>
       )}
       {variant === "orbit" && (
-        <g fill="none" stroke="var(--violet)" strokeWidth="1.5">
+        <g fill="none" stroke="var(--yellow)" strokeWidth="1.5">
           <ellipse cx="400" cy="260" rx="230" ry="90" />
           <ellipse cx="400" cy="260" rx="160" ry="180" stroke="var(--blue)" opacity="0.75" />
-          <circle cx="620" cy="230" r="7" fill="var(--violet)" stroke="none" />
+          <circle cx="620" cy="230" r="7" fill="var(--yellow)" stroke="none" />
           <circle cx="300" cy="120" r="5" fill="var(--blue)" stroke="none" />
         </g>
       )}
       {showLabel && (
         <text x="36" y="478" fill="var(--mist)" fontFamily="ui-monospace, monospace" fontSize="14" letterSpacing="3">
-          CSL / FIELD NOTE
+          CYBERSTUDIOLAB
         </text>
       )}
     </svg>

@@ -4,7 +4,7 @@ import { Magnetic } from "@/components/ui/magnetic";
 import { isValidEmail } from "@/lib/utils";
 import { FormEvent, useState } from "react";
 
-const topics = ["Editorial tip", "Tutorial idea", "Partnership", "Something else"];
+const topics = ["Services enquiry", "Content request", "Correction", "Partnership", "Something else"];
 
 export function ContactForm() {
   const [name, setName] = useState("");
@@ -37,8 +37,8 @@ export function ContactForm() {
 
   if (done) {
     return (
-      <div className="border border-lime/50 p-8" role="status">
-        <p className="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-lime">Preview sent</p>
+      <div className="border border-cyan/50 p-8" role="status">
+        <p className="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-cyan">Preview sent</p>
         <p className="mt-4 font-display text-4xl uppercase leading-none tracking-[-0.04em]">Message staged locally.</p>
         <p className="mt-4 max-w-lg text-mist">
           Thanks, {name.trim()}. This form does not deliver mail yet. Nothing was transmitted or stored.
@@ -73,7 +73,7 @@ export function ContactForm() {
       </label>
       {error && <p className="font-mono text-xs text-[#ff8b98]">{error}</p>}
       <Magnetic>
-        <button type="submit" className="h-12 bg-lime px-6 font-mono text-[0.72rem] uppercase tracking-[0.16em] text-on-accent transition-opacity hover:opacity-90">
+        <button type="submit" className="h-12 bg-cyan px-6 font-mono text-[0.72rem] uppercase tracking-[0.16em] text-on-accent transition-opacity hover:opacity-90">
           Send note
         </button>
       </Magnetic>

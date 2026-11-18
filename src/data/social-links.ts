@@ -28,7 +28,7 @@ export const socialLinks: SocialLink[] = [
   {
     platform: "linkedin",
     label: "LinkedIn",
-    handle: "Cyber Studio Lab",
+    handle: "CyberStudioLab",
     href: "https://www.linkedin.com/company/cyberstudiolab",
   },
   {

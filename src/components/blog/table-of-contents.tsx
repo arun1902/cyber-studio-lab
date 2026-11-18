@@ -25,14 +25,14 @@ export function TableOfContents({ items }: { items: { id: string; text: string }
   if (items.length === 0) return null;
 
   return (
-    <nav aria-label="On this page" className="lg:sticky lg:top-28">
-      <p className="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-lime">On this page</p>
+    <nav aria-label="On this page" className="lg:sticky lg:top-28 lg:self-start">
+      <p className="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-cyan">On this page</p>
       <ol className="mt-4 space-y-3">
         {items.map((item) => (
           <li key={item.id}>
             <a
               href={`#${item.id}`}
-              className={`block text-sm leading-5 ${active === item.id ? "text-paper" : "text-mist hover:text-paper"}`}
+              className={`block border-l pl-3 text-sm leading-5 ${active === item.id ? "border-cyan text-paper" : "border-line text-mist hover:text-paper"}`}
               aria-current={active === item.id ? "location" : undefined}
             >
               {item.text}
