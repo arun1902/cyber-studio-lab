@@ -11,57 +11,66 @@ const formats = [
     href: "/blog",
     icon: FileText,
     title: "Blogs",
-    body: "Technical knowledge, engineering best practices, security explanations, and industry insights.",
+    body: "Clear explanations of engineering and security ideas — written for beginners first.",
     count: () => `${getBlogs().length} articles`,
+    accent: "text-cyan bg-cyan/10",
   },
   {
     href: "/tutorials",
     icon: BookOpen,
     title: "Tutorials",
-    body: "Step-by-step practical guides with code, commands, configurations, and real implementations.",
+    body: "Step-by-step guides with code, commands, and configs you can follow along.",
     count: () => `${getTutorials().length} guides`,
+    accent: "text-yellow bg-yellow/10",
   },
   {
     href: "/videos",
     icon: PlayCircle,
-    title: "Animated Videos",
-    body: "Visual explanations of complex technologies, cyberattacks, vulnerabilities, and their solutions.",
+    title: "Video lessons",
+    body: "Animated walkthroughs of attacks, protocols, and infrastructure concepts.",
     count: () => `${videos.length} in the pipeline`,
+    accent: "text-cyan bg-cyan/10",
   },
   {
     href: "/tips",
     icon: Lightbulb,
-    title: "Tips & Tricks",
-    body: "Coding improvements, productivity, configuration recommendations, parameter explanations, and tools.",
+    title: "Tips & tricks",
+    body: "Small, practical improvements for coding, tools, and everyday security habits.",
     count: () => `${tips.length} tips`,
+    accent: "text-yellow bg-yellow/10",
   },
 ];
 
 export function FormatsSection() {
   return (
-    <section id="formats" className="scroll-mt-24 px-5 py-24 md:px-8 md:py-32">
-      <div className="mx-auto max-w-[1440px]">
+    <section id="formats" className="scroll-mt-24 px-5 py-20 md:px-8 md:py-28">
+      <div className="mx-auto max-w-[1200px]">
         <Reveal>
-          <SectionLabel index="01">Four ways to learn</SectionLabel>
-          <h2 className="max-w-4xl font-display text-[clamp(2.6rem,6vw,5.2rem)] leading-[0.95] tracking-[-0.045em]">
-            Read it, follow it, watch it, use it.
+          <SectionLabel index="02">Explore by format</SectionLabel>
+          <h2 className="max-w-3xl font-display text-[clamp(2.2rem,5vw,3.75rem)] leading-[1] tracking-[-0.04em]">
+            Four clear ways to learn.
           </h2>
+          <p className="mt-4 max-w-xl text-mist">
+            Pick what fits you today — reading, hands-on steps, watching, or quick tips.
+          </p>
         </Reveal>
-        <div className="mt-12 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
-          {formats.map(({ href, icon: Icon, title, body, count }, index) => (
-            <Reveal key={href} delay={index * 0.06}>
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          {formats.map(({ href, icon: Icon, title, body, count, accent }, index) => (
+            <Reveal key={href} delay={index * 0.05}>
               <Link
                 href={href}
-                className="group flex h-full min-h-72 flex-col justify-between border border-line bg-surface p-6 transition-colors duration-300 hover:border-cyan/50 md:p-7"
+                className="group flex h-full min-h-64 flex-col justify-between rounded-2xl border border-line bg-surface-strong p-6 shadow-[var(--shadow)] transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan/30 md:p-7"
               >
                 <div className="flex items-start justify-between">
-                  <Icon className="h-7 w-7 text-cyan" aria-hidden="true" />
-                  <ArrowUpRight className="h-5 w-5 text-mist transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-yellow" />
+                  <span className={`grid h-11 w-11 place-items-center rounded-xl ${accent}`}>
+                    <Icon className="h-5 w-5" aria-hidden="true" />
+                  </span>
+                  <ArrowUpRight className="h-5 w-5 text-mist transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-cyan" />
                 </div>
                 <div>
-                  <h3 className="font-display text-3xl tracking-[-0.035em] group-hover:text-cyan">{title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-mist">{body}</p>
-                  <p className="mt-5 font-mono text-[0.66rem] uppercase tracking-[0.16em] text-yellow">{count()}</p>
+                  <h3 className="font-display text-2xl tracking-[-0.03em] group-hover:text-cyan">{title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-mist">{body}</p>
+                  <p className="mt-5 font-mono text-[0.66rem] uppercase tracking-[0.14em] text-yellow">{count()}</p>
                 </div>
               </Link>
             </Reveal>

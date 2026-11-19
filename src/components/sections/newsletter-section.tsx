@@ -39,7 +39,7 @@ export function NewsletterSection({
   return (
     <section className="relative overflow-hidden border-t border-line px-5 py-24 md:px-8 md:py-32">
       <div className="grid-field pointer-events-none absolute inset-0 opacity-60" aria-hidden="true" />
-      <div className="relative mx-auto max-w-[1440px]">
+      <div className="relative mx-auto max-w-[1200px]">
         <SectionLabel index={index}>{kicker}</SectionLabel>
         <h2 className="max-w-4xl font-display text-[clamp(2.6rem,6vw,5.2rem)] leading-[0.95] tracking-[-0.045em]">{title}</h2>
         <p className="mt-6 max-w-xl text-mist">{description}</p>

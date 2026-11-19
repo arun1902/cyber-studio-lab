@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "CyberStudioLab — Learn. Build. Secure.";
+export const alt = "cyberstudiolab — Learn. Build. Secure.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -14,25 +14,29 @@ export default function OpenGraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#070b10",
-          color: "#e6edf3",
+          background: "#f8f9fc",
+          color: "#1e1b4b",
           padding: "72px",
         }}
       >
-        <div style={{ display: "flex", fontSize: 30, letterSpacing: 2 }}>
-          Cyber<span style={{ color: "#22d3ee" }}>Studio</span>Lab
+        <div style={{ display: "flex", fontSize: 34, letterSpacing: -1, fontWeight: 700 }}>
+          <span>cyberstudio</span>
+          <span style={{ color: "#4f46e5" }}>lab</span>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ display: "flex", fontSize: 120, lineHeight: 0.95, letterSpacing: -4 }}>
-            <span>Learn.&nbsp;</span>
-            <span style={{ color: "#22d3ee" }}>Build.&nbsp;</span>
-            <span style={{ color: "#fcd34d" }}>Secure.</span>
+          <div style={{ display: "flex", fontSize: 96, lineHeight: 0.95, letterSpacing: -3, fontWeight: 700 }}>
+            <span>Learn. Build. </span>
+            <span style={{ color: "#f97316" }}>Secure.</span>
           </div>
-          <div style={{ display: "flex", marginTop: 28, fontSize: 32, color: "#8b98a5" }}>
+          <div style={{ display: "flex", marginTop: 28, fontSize: 30, color: "#64748b" }}>
             A developer & cybersecurity knowledge platform.
           </div>
         </div>
-        <div style={{ display: "flex", fontSize: 24, color: "#8b98a5" }}>cyberstudiolab.com</div>
+        <div style={{ display: "flex", fontSize: 24, color: "#64748b" }}>
+          <span style={{ color: "#1e1b4b" }}>cyberstudio</span>
+          <span style={{ color: "#4f46e5" }}>lab</span>
+          <span>.com</span>
+        </div>
       </div>
     ),
     { ...size },

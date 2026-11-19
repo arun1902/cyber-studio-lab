@@ -10,14 +10,21 @@ import type { TopicId } from "@/data/topics";
 import { formatDate } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { useMemo, useState } from "react";
 
 const levels: Level[] = ["Beginner", "Intermediate", "Advanced"];
 
+function parseLevel(value: string | null): Level | "all" {
+  if (value === "Beginner" || value === "Intermediate" || value === "Advanced") return value;
+  return "all";
+}
+
 export function ContentExplorer({ articles, placeholder }: { articles: Article[]; placeholder: string }) {
+  const searchParams = useSearchParams();
   const [query, setQuery] = useState("");
   const [topic, setTopic] = useState<TopicId | "all">("all");
-  const [level, setLevel] = useState<Level | "all">("all");
+  const [level, setLevel] = useState<Level | "all">(() => parseLevel(searchParams.get("level")));
 
   const availableTopics = useMemo(
     () => topics.filter((item) => articles.some((article) => article.topics.includes(item.id))),
@@ -39,7 +46,7 @@ export function ContentExplorer({ articles, placeholder }: { articles: Article[]
   const list = featured ? filtered.filter((article) => article.slug !== featured.slug) : filtered;
 
   return (
-    <div className="mx-auto max-w-[1440px] px-5 py-14 md:px-8 md:py-20">
+    <div className="mx-auto max-w-[1200px] px-5 py-14 md:px-8 md:py-20">
       <div className="space-y-6 border-b border-line pb-8">
         <label className="block w-full max-w-xl">
           <span className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-mist">Search</span>

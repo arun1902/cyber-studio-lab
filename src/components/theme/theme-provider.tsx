@@ -1,53 +1,53 @@
 "use client";
 
-import { createContext, useContext, useMemo, useState } from "react";
-
-export type Theme = "light" | "dark";
+import {
+  THEME_STORAGE_KEY,
+  applyDocumentTheme,
+  readDocumentTheme,
+  type Theme,
+} from "@/lib/theme";
+import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
 type ThemeContextValue = {
   theme: Theme;
+  ready: boolean;
   setTheme: (theme: Theme) => void;
   toggleTheme: () => void;
 };
 
 const ThemeContext = createContext<ThemeContextValue | null>(null);
-const STORAGE_KEY = "csl-theme";
-
-function readTheme(): Theme {
-  if (typeof document === "undefined") return "dark";
-  if (document.documentElement.classList.contains("light")) return "light";
-  if (document.documentElement.dataset.theme === "light") return "light";
-  return "dark";
-}
-
-function applyTheme(theme: Theme) {
-  const root = document.documentElement;
-  root.classList.toggle("light", theme === "light");
-  root.style.colorScheme = theme;
-  root.dataset.theme = theme;
-}
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>(readTheme);
+  // Always start as light on server + first client render to avoid hydration mismatch.
+  const [theme, setThemeState] = useState<Theme>("light");
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    const next = readDocumentTheme();
+    setThemeState(next);
+    applyDocumentTheme(next);
+    setReady(true);
+  }, []);
 
   const value = useMemo<ThemeContextValue>(
     () => ({
       theme,
+      ready,
       setTheme: (next) => {
-        window.localStorage.setItem(STORAGE_KEY, next);
-        applyTheme(next);
+        window.localStorage.setItem(THEME_STORAGE_KEY, next);
+        applyDocumentTheme(next);
         setThemeState(next);
       },
       toggleTheme: () => {
         setThemeState((current) => {
           const next = current === "dark" ? "light" : "dark";
-          window.localStorage.setItem(STORAGE_KEY, next);
-          applyTheme(next);
+          window.localStorage.setItem(THEME_STORAGE_KEY, next);
+          applyDocumentTheme(next);
           return next;
         });
       },
     }),
-    [theme],
+    [theme, ready],
   );
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
@@ -60,16 +60,3 @@ export function useTheme() {
   }
   return context;
 }
-
-export const themeInitScript = `(() => {
-  try {
-    const stored = localStorage.getItem("${STORAGE_KEY}");
-    const theme = stored === "light" || stored === "dark"
-      ? stored
-      : (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
-    const root = document.documentElement;
-    root.classList.toggle("light", theme === "light");
-    root.style.colorScheme = theme;
-    root.dataset.theme = theme;
-  } catch (_) {}
-})();`;

@@ -7,14 +7,19 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="border-t border-line">
-      <div className="mx-auto grid max-w-[1440px] gap-12 px-5 py-16 md:px-8 lg:grid-cols-[1.3fr_0.8fr_1.4fr_0.8fr]">
+    <footer className="border-t border-line bg-surface-strong">
+      <div className="mx-auto grid max-w-[1200px] gap-12 px-5 py-16 md:px-8 lg:grid-cols-[1.3fr_0.8fr_1.4fr_0.8fr]">
         <div>
           <Logo />
           <p className="mt-6 max-w-sm text-sm leading-7 text-mist">
             A developer and cybersecurity knowledge platform. From beginner concepts to advanced production engineering.
           </p>
           <p className="mt-6 max-w-sm font-display text-xl leading-snug tracking-[-0.03em] text-paper">{site.promise}</p>
+          <p className="mt-4 font-mono text-[0.7rem] uppercase tracking-[0.16em] text-mist">
+            <span className="text-paper">cyberstudio</span>
+            <span className="text-cyan">lab</span>
+            <span className="text-mist">.com</span>
+          </p>
         </div>
         <div>
           <p className="font-mono text-[0.68rem] uppercase tracking-[0.2em] text-cyan">Platform</p>
@@ -65,7 +70,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-line">
-        <div className="mx-auto flex max-w-[1440px] flex-col gap-3 px-5 py-5 text-xs text-mist md:flex-row md:items-center md:justify-between md:px-8">
+        <div className="mx-auto flex max-w-[1200px] flex-col gap-3 px-5 py-5 text-xs text-mist md:flex-row md:items-center md:justify-between md:px-8">
           <p>
             © {site.year} {site.name}. Professional services delivered with {site.servicesPartner}.
           </p>

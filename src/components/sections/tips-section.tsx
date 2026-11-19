@@ -17,15 +17,15 @@ export function TipsSection() {
   const current = featuredTips.find((tip) => tip.id === active) ?? featuredTips[0];
 
   return (
-    <section className="border-t border-line px-5 py-24 md:px-8 md:py-32">
-      <div className="mx-auto max-w-[1440px]">
+    <section className="border-t border-line px-5 py-20 md:px-8 md:py-28">
+      <div className="mx-auto max-w-[1200px]">
         <Reveal>
           <div className="flex flex-wrap items-end justify-between gap-6">
             <div>
-              <SectionLabel index="05">Tips & tricks</SectionLabel>
-              <h2 className="font-display text-[clamp(2.6rem,6vw,5.2rem)] leading-[0.95] tracking-[-0.045em]">Copy. Paste. Improve.</h2>
+              <SectionLabel index="06">Tips & tricks</SectionLabel>
+              <h2 className="font-display text-[clamp(2.2rem,5vw,3.75rem)] leading-[1] tracking-[-0.04em]">Copy. Paste. Improve.</h2>
             </div>
-            <Link href="/tips" className="inline-flex items-center gap-2 font-mono text-[0.7rem] uppercase tracking-[0.16em] text-cyan hover:text-paper">
+            <Link href="/tips" className="inline-flex items-center gap-2 rounded-full border border-line bg-surface-strong px-4 py-2 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-cyan transition-colors hover:border-cyan/40">
               All {tips.length} tips <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>

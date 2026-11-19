@@ -1,47 +1,50 @@
+/* Brand: indigo + orange, light-first (cyberstudiolab) */
 :root {
-  --ink: #070b10;
-  --paper: #e6edf3;
-  --mist: #8b98a5;
-  --cyan: #22d3ee;
-  --yellow: #fcd34d;
-  --line: rgba(230, 237, 243, 0.11);
-  --blue: #60a5fa;
-  --surface: rgba(255, 255, 255, 0.03);
-  --surface-strong: #0d141c;
-  --code-bg: #0a1017;
-  --on-accent: #031015;
-  --glow: rgba(34, 211, 238, 0.1);
-  --glow-soft: rgba(252, 211, 77, 0.05);
-  --grain-opacity: 0.04;
-  --grid-line: rgba(34, 211, 238, 0.045);
-  --field-line: rgba(230, 237, 243, 0.22);
-  --field-placeholder: rgba(230, 237, 243, 0.4);
-  --prose: rgba(230, 237, 243, 0.8);
-  --nav-bg: rgba(7, 11, 16, 0.8);
-  --shadow: 0 12px 40px rgba(0, 0, 0, 0.32);
-  color-scheme: dark;
+  --ink: #f8f9fc;
+  --paper: #1e1b4b;
+  --mist: #64748b;
+  --cyan: #4f46e5;
+  --yellow: #f97316;
+  --line: rgba(30, 27, 75, 0.1);
+  --blue: #6366f1;
+  --surface: rgba(79, 70, 229, 0.04);
+  --surface-strong: #ffffff;
+  --code-bg: #1e1b4b;
+  --on-accent: #ffffff;
+  --glow: rgba(79, 70, 229, 0.1);
+  --glow-soft: rgba(249, 115, 22, 0.08);
+  --grain-opacity: 0.025;
+  --grid-line: rgba(79, 70, 229, 0.06);
+  --field-line: rgba(30, 27, 75, 0.16);
+  --field-placeholder: rgba(30, 27, 75, 0.38);
+  --prose: rgba(30, 27, 75, 0.78);
+  --nav-bg: rgba(248, 249, 252, 0.88);
+  --shadow: 0 16px 40px rgba(30, 27, 75, 0.08);
+  --radius: 1rem;
+  color-scheme: light;
 }
 
-:root.light {
-  --ink: #f5f7fa;
-  --paper: #0f172a;
-  --mist: #5b6776;
-  --cyan: #0e7490;
-  --yellow: #a16207;
-  --line: rgba(15, 23, 42, 0.1);
-  --blue: #2563eb;
-  --surface: rgba(15, 23, 42, 0.03);
-  --surface-strong: #ffffff;
-  --code-bg: #0d141c;
-  --on-accent: #f0fdff;
-  --glow: rgba(14, 116, 144, 0.07);
-  --glow-soft: rgba(161, 98, 7, 0.05);
-  --grain-opacity: 0.03;
-  --grid-line: rgba(15, 23, 42, 0.05);
-  --field-line: rgba(15, 23, 42, 0.18);
-  --field-placeholder: rgba(15, 23, 42, 0.38);
-  --prose: rgba(15, 23, 42, 0.8);
-  --nav-bg: rgba(245, 247, 250, 0.84);
-  --shadow: 0 12px 36px rgba(15, 23, 42, 0.08);
-  color-scheme: light;
+/* Optional dark mode: deep navy, not pure black */
+:root.dark {
+  --ink: #1e1b4b;
+  --paper: #f1f5f9;
+  --mist: #94a3b8;
+  --cyan: #818cf8;
+  --yellow: #fb923c;
+  --line: rgba(241, 245, 249, 0.12);
+  --blue: #a5b4fc;
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface-strong: #2a2760;
+  --code-bg: #12103a;
+  --on-accent: #ffffff;
+  --glow: rgba(129, 140, 248, 0.12);
+  --glow-soft: rgba(251, 146, 60, 0.08);
+  --grain-opacity: 0.035;
+  --grid-line: rgba(129, 140, 248, 0.06);
+  --field-line: rgba(241, 245, 249, 0.2);
+  --field-placeholder: rgba(241, 245, 249, 0.4);
+  --prose: rgba(241, 245, 249, 0.8);
+  --nav-bg: rgba(30, 27, 75, 0.88);
+  --shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+  color-scheme: dark;
 }

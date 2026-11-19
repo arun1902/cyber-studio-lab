@@ -7,7 +7,7 @@ import { ArrowUpRight } from "lucide-react";
 export function SocialSection() {
   return (
     <section className="border-t border-line px-5 py-20 md:px-8 md:py-28">
-      <div className="mx-auto max-w-[1440px]">
+      <div className="mx-auto max-w-[1200px]">
         <Reveal>
           <SectionLabel index="07">Community</SectionLabel>
           <h2 className="max-w-3xl font-display text-[clamp(2.4rem,5vw,4.5rem)] leading-[0.95] tracking-[-0.045em]">

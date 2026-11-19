@@ -15,26 +15,26 @@ const examples = [
 
 export function BeyondBasicsSection() {
   return (
-    <section className="border-t border-line px-5 py-24 md:px-8 md:py-32">
-      <div className="mx-auto grid max-w-[1440px] gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+    <section className="border-t border-line px-5 py-20 md:px-8 md:py-28">
+      <div className="mx-auto grid max-w-[1200px] gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
         <Reveal>
-          <SectionLabel index="02">Beyond the basics</SectionLabel>
-          <h2 className="font-display text-[clamp(2.6rem,5.5vw,4.8rem)] leading-[0.95] tracking-[-0.045em]">
+          <SectionLabel index="05">Beyond the basics</SectionLabel>
+          <h2 className="font-display text-[clamp(2.2rem,5vw,3.5rem)] leading-[1] tracking-[-0.04em]">
             Not just what it is. <span className="text-cyan">How to use it correctly.</span>
           </h2>
-          <p className="mt-6 max-w-md text-mist">
-            Most content stops at the definition. We go on to the recommended values, the parameters that matter, the reasoning behind them, and the mistakes that show up in production.
+          <p className="mt-5 max-w-md text-mist">
+            Most content stops at the definition. We go on to the recommended values, the parameters that matter, and the mistakes that show up in production.
           </p>
-          <p className="mt-6 border-l-2 border-yellow pl-4 font-display text-xl tracking-[-0.02em] text-paper">
+          <p className="mt-6 rounded-xl border-l-4 border-yellow bg-yellow/5 py-3 pl-4 font-display text-xl tracking-[-0.02em] text-paper">
             Practical knowledge developers can actually apply.
           </p>
         </Reveal>
-        <ol className="border-t border-line">
+        <ol className="overflow-hidden rounded-2xl border border-line bg-surface-strong shadow-[var(--shadow)]">
           {examples.map((example, index) => (
-            <li key={example.href} className="border-b border-line">
-              <Link href={example.href} className="group flex items-center gap-5 py-5">
+            <li key={example.href} className="border-b border-line last:border-b-0">
+              <Link href={example.href} className="group flex items-center gap-5 px-5 py-4 md:px-6">
                 <span className="font-mono text-xs text-yellow">{String(index + 1).padStart(2, "0")}</span>
-                <span className="flex-1 font-display text-xl tracking-[-0.025em] text-paper/85 group-hover:text-cyan md:text-2xl">
+                <span className="flex-1 font-display text-lg tracking-[-0.025em] text-paper/85 group-hover:text-cyan md:text-xl">
                   {example.label}
                 </span>
                 <ArrowUpRight className="h-5 w-5 text-mist transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-cyan" />

@@ -27,8 +27,8 @@ export default function VideosPage() {
       <PageHero index="03" kicker="Animated videos" title="See how it works, not just what it is.">
         Animated explanations of protocols, attacks, and infrastructure. Each video follows one idea from start to finish and links to a written guide with the configs and code.
       </PageHero>
-      <div className="mx-auto max-w-[1440px] px-5 py-16 md:px-8">
-        <div className="flex flex-col gap-4 border border-line bg-surface p-5 md:flex-row md:items-center md:justify-between">
+      <div className="mx-auto max-w-[1200px] px-5 py-16 md:px-8">
+        <div className="flex flex-col gap-4 rounded-2xl border border-line bg-surface-strong p-5 shadow-[var(--shadow)] md:flex-row md:items-center md:justify-between">
           <p className="max-w-2xl text-sm leading-6 text-mist">
             The first episodes are in production. Subscribe on YouTube to get them as they are released; this page lists what is coming and in what order.
           </p>
@@ -37,7 +37,7 @@ export default function VideosPage() {
               href={youtube.href}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex h-11 shrink-0 items-center gap-2 bg-cyan px-5 font-mono text-[0.7rem] uppercase tracking-[0.16em] text-on-accent transition-opacity hover:opacity-90"
+              className="inline-flex h-11 shrink-0 items-center gap-2 rounded-xl bg-cyan px-5 font-semibold text-on-accent transition-opacity hover:opacity-90"
             >
               <SocialIcon platform="youtube" className="h-4 w-4" />
               Subscribe
@@ -48,15 +48,15 @@ export default function VideosPage() {
           {sorted.map((video) => {
             const related = video.relatedSlug ? getArticle(video.relatedSlug) : undefined;
             return (
-              <li key={video.slug} id={video.slug} className="flex scroll-mt-28 flex-col border border-line">
+              <li key={video.slug} id={video.slug} className="flex scroll-mt-28 flex-col overflow-hidden rounded-2xl border border-line bg-surface-strong shadow-[var(--shadow)]">
                 <div className="relative overflow-hidden border-b border-line">
                   <CoverArt variant={video.cover} showLabel={false} className="aspect-video w-full" />
                   <span className="absolute inset-0 grid place-items-center" aria-hidden="true">
-                    <span className="grid h-14 w-14 place-items-center rounded-full border border-cyan/60 bg-ink/70 text-cyan backdrop-blur">
-                      <Play className="ml-0.5 h-5 w-5" />
+                    <span className="grid h-14 w-14 place-items-center rounded-full bg-cyan text-on-accent shadow-lg">
+                      <Play className="ml-0.5 h-5 w-5 fill-current" />
                     </span>
                   </span>
-                  <span className="absolute bottom-3 right-3 bg-ink/80 px-2 py-1 font-mono text-[0.65rem] text-paper">{video.duration}</span>
+                  <span className="absolute bottom-3 right-3 rounded-md bg-paper/90 px-2 py-1 font-mono text-[0.65rem] text-ink">{video.duration}</span>
                 </div>
                 <div className="flex flex-1 flex-col p-5">
                   <span className="flex flex-wrap items-center gap-3">
